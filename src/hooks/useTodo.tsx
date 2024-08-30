@@ -6,6 +6,17 @@ interface TodoContextProps {
   deletarTodo: (id: string) => Promise<void>;
 }
 
+interface TodoList{
+  id: string;
+  titulo: string;
+  descricao: string;
+}
+
+export interface AddTodo {
+  titulo: string;
+  descricao: string;
+}
+
 interface TodoProviderProps {
   children: ReactNode;
 }
@@ -13,8 +24,8 @@ interface TodoProviderProps {
 export const TodoContext = createContext({} as TodoContextProps);
 
 export default function TodoProvider({ children }: TodoProviderProps) {
-  const [todos, setTodos] = useState([]);
-
+  const [todos, setTodos] = useState<TodoList[]>([]);
+  
   // TODO: Precisa realizar a requisição e armazenar os dados do todo
   async function listarTodo() {}
 

@@ -11,6 +11,7 @@ import {
   VStack
 } from "@chakra-ui/react";
 import { useTodo } from "../../hooks/useTodo";
+import { FormEvent } from "react";
 
 export default function AddTodo() {
   const {} = useTodo();
@@ -19,7 +20,9 @@ export default function AddTodo() {
   function irParaTelaListagem() {}
 
   //TODO: Adicione a logica cadatrar um TODO;
-  function handleAdicionarTodo() {}
+  function handleAdicionarTodo(event: FormEvent) {
+
+  }
 
   return (
     <Flex w="100%" h="60%" justifyContent="center" alignItems="center">
